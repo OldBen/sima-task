@@ -1,0 +1,24 @@
+table, tr, td {
+    border: 2px solid;
+    border-color: lightblue;
+  }
+
+table#region-table {
+    width: 100%;
+}
+
+div#orders {
+    height: 480px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 15px;
+}
+
+div#comments {
+    margin-top: 25px;
+    width: 75%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 15px;
+    align-items: center;
+}

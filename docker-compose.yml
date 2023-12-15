@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+
+  mariadb:
+    image: mariadb:lts
+    container_name: mariadb
+    restart: unless-stopped
+    ports:
+      - 8889:3306
+    volumes:
+      - ./mysql/:/var/lib/mysql
+      - ./init/:/docker-entrypoint-initdb.d/
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+
+  php:
+    image: php:8.2-fpm-alpine
+    container_name: php
+    restart: unless-stopped
+    ports:
+      - 9000:9000
+    volumes:
+      - ${WWW_DOCUMENT_ROOT}/:/app
+    build: .
+
+  apache:
+    image: bitnami/apache:2.4
+    container_name: apache
+    restart: always
+    ports:
+      - 8080:8080
+      - 443:443
+    volumes:
+      - ./apache-vhosts/httpd.conf:/vhosts/httpd.conf:ro
+      - ${WWW_DOCUMENT_ROOT}/:/app
+    depends_on:
+      - mariadb
+      - php
+
+networks:
+  sima:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
+          gateway: 172.21.0.1

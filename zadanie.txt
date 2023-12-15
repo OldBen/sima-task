@@ -1,0 +1,18 @@
+ZADANIE:
+
+Przy wykorzystaniu języka PHP, bazy danych MySQL oraz biblioteki Leaflet przygotuj kod,
+który wyświetli na mapie markery z oznaczeniem ilości zamówień pochodzących z danej miejscowości.
+
+Obok mapy umieść listę województw wraz z ilością zamówień przypadających na każde z nich.
+
+Poniżej mapy i listy województw umieść pole tekstowe, przy użyciu którego odwiedzający może zamieścić
+komentarz, który zostanie zapisany w przygotowanej przez Ciebie tabeli i wyświetlony poniżej pola po dodaniu.
+
+Do wyświetlanych komentarzy dodaj paginację i ogranicz jednocześnie wyświetlaną ilość do 8 pozycji.
+
+
+W folderze znajdziesz zrzut przykładowych danych wraz ze strukturą tabeli orders_address.
+
+
+
+Załącznik z wykonanym zadaniem prześlij mailowo na adres sebastian.lis@koszyk365.pl

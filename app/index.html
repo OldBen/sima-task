@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./jquery-csv.js"></script>
+        <script type="text/javascript" src="./leaflet.js"></script>
+        <script type="text/javascript" src="./script.js"></script>
+        <link rel="stylesheet" href="leaflet.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="orders">
+            <div id="map"></div>
+            <div id="region">
+                <table id="region-table">
+                </table>
+            </div>
+        </div>
+        <div id="comments">
+            <table id="comments-table">
+                
+            </table>
+            <input id="comment" type="text" name="comment" placeholder="Komentarz...">
+            <button id="submit">Zapisz</button>
+            <div id="filler"></div>
+            <button id="prev" disabled><</button>
+            <button id="next" disabled>></button>
+        </div>
+    </body>
+</html>
